@@ -1,2 +1,7 @@
-# PowerShellScriptExtractListofFile
- PowerShell script that can be used to extract a list of the file names inside a folder and save them to an Excel file
+# PowerShell Script to Extract File Names and Save to Excel
+
+This PowerShell script can be used to extract a list of file names from a specified folder and save them to an Excel file. The script sets the path to the folder containing the files using the `$folderPath` variable and sets the path to the Excel file where the file names will be saved using the `$excelFilePath` variable. It then uses the `Get-ChildItem` cmdlet to retrieve a list of files in the specified folder and stores it in `$fileList`.
+
+The script creates a new Excel COM object and stores it in `$excelApp`. It then adds a new workbook to this object and stores it in `$workbook`. The first worksheet in this workbook is retrieved and stored in `$worksheet`. The value of the first cell in this worksheet is set to "File Name". The script then iterates over `$fileList` using a `for` loop. For each file, it sets the value of a cell in the next row to its name. Finally, it saves this workbook to `$excelFilePath`, closes it, and quits `$excelApp`.
+
+You can modify `$folderPath` and `$excelFilePath` to specify your desired folder and excel file paths. This script provides an easy way to extract file names from a folder and save them to an Excel file for further processing or analysis. 😊
